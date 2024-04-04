@@ -23,7 +23,7 @@ connection.connect((err) => {
 
 app.post('/AddInfo', (req, res) => {
   const { Id, hoTen, gioiTinh, ngaySinh,noiSinh, danToc, tonGiao, hoKhau,noiTotNghiep, namTotNghiep, cmnd, ngayCap,noiCap, diaChiNhanh, dienThoai, dienThoaiPhuHuynh,nganhDangKy } = req.body; 
-  const sql = 'INSERT INTO kt2903 (`Id`, `hoTen`, `gioiTinh`, `ngaySinh`,`noiSinh`, `danToc`, `tonGiao`, `hoKhau`,`noiTotNghiep`, `namTotNghiep`, `cmnd`, `ngayCap`,`noiCap`, `diaChiNhanh`, `dienThoai`, `dienThoaiPhuHuynh`,`nganhDangKy`) VALUES (?, ?, ?,?,?,?, ?, ?,?,?,?, ?, ?,?,?,?,?)';
+  const sql = 'INSERT INTO dangky (`Id`, `hoTen`, `gioiTinh`, `ngaySinh`,`noiSinh`, `danToc`, `tonGiao`, `hoKhau`,`noiTotNghiep`, `namTotNghiep`, `cmnd`, `ngayCap`,`noiCap`, `diaChiNhanh`, `dienThoai`, `dienThoaiPhuHuynh`,`nganhDangKy`) VALUES (?, ?, ?,?,?,?, ?, ?,?,?,?, ?, ?,?,?,?,?)';
   connection.query(sql, [Id, hoTen, gioiTinh, ngaySinh,noiSinh, danToc, tonGiao, hoKhau,noiTotNghiep, namTotNghiep, cmnd, ngayCap,noiCap, diaChiNhanh, dienThoai, dienThoaiPhuHuynh,nganhDangKy], (error, results, fields) => {
     if (error) {
      
@@ -35,7 +35,7 @@ app.post('/AddInfo', (req, res) => {
   });
 });
 app.get('/Info', (req, res) => {
-  const sql = 'SELECT * FROM kt2903';
+  const sql = 'SELECT * FROM dangky';
 
   connection.query(sql, (error, results, fields) => {
     if (error) {
